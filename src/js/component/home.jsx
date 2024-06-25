@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 /* Aquí importamos React y los hooks useState y useEffect. - useState se usa para manejar el estado dentro del componente
  -useEffect se usa para manejar los efectos secundarios, como las llamadas a APIs.*/
@@ -73,20 +74,24 @@ En el return (Home), definimos la interfaz de usuario
 -Un botón para limpiar todas las tareas (Clear All). 
 
 */	
-    return (
-        <div className="container text-center mt-5">
+//Cada vez que cambia el estado (tarea o todos), React automáticamente vuelve a renderizar el componente Home para reflejar esos cambios en la interfaz de usuario.
+
+    return ( //Renderización donde React actualiza el DOM para reflejar los cambios en el estado de los componentes ( useStatey useEffect) 
+        //Todo el código JSX que está dentro del return es lo que se va a renderizar en el navegador cuando esta const (Home) se invoque.
+        //Defino un contenedor con Bootstrap para centrar el contenido (text-center) y aplicar márgenes (mt-5).
+        <div className="container text-center mt-5"> 
             <h1>Mi lista de tareas</h1>
-            <input
+            <input //input controlado por estado (tarea) que permite al usuario ingresar nuevas tareas.
                 type="text"
-                value={tarea}
-                onChange={(e) => setTarea(e.target.value)}
+                value={tarea} //value está vinculado a tarea
+                onChange={(e) => setTarea(e.target.value)}//onChange actualiza tarea cada vez que el usuario escribe en el input.
                 placeholder="Añade una nueva tarea"
-            />
+            /> 
             <button onClick={addTarea} className="btn btn-primary ms-2">Add</button>
-            <ul className="list-group mt-3">
-                {todos.map((todo, index) => (
-                    <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                        {todo.label}
+            <ul className="list-group mt-3"> 
+                {todos.map((elemArrTodos, index) => ( 
+                    <li key={index} className="list-group-item d-flex justify-content-between align-items-center"> 
+                        {elemArrTodos.label}
                         <button onClick={() => eliminarTarea(index)} className="btn btn-danger">Delete</button>
                     </li>
                 ))}
@@ -97,3 +102,10 @@ En el return (Home), definimos la interfaz de usuario
 };
 
 export default Home;
+
+//<button onClick={addTarea} className="btn btn-primary ms-2">Add</button> creo el botón que añade la tarea al hacer clic. "onClick" llama a la función addTarea.
+//<button onClick={borrarTarea} className="btn btn-warning mt-3">Clear All</button> creo el botón que borra la tarea al hacer clic en la x. "onClick" llama a la función borrarTarea.
+//Lista no ordenada (ul) de Bootstrap para mostrar las tareas (list-group). mt-3 aplica un margen superior.
+//todos.map((elemArrtodos, index) => ...) asegura que cada tarea se renderice dinámicamente en la lista. El atributo key={index} es crucial para que React identifique cada elemento de lista de manera única, es decir, cada tarea nueva "tendria" como una clave.
+//elemArrTod es el nombre que has elegido para el parámetro que representa cada elemento del array todos en cada iteración de map.
+
