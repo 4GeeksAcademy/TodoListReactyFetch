@@ -10,3 +10,8 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+/* Estilos personalizados */
+body {
+    background-color: #f8f9fa;
+    color: #212529;
+}
