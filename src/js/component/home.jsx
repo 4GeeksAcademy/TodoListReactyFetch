@@ -32,18 +32,6 @@ const Home = () => { //Usamos useState para crear dos estados:
             // Crear un objeto nuevaTarea con la etiqueta (label) de la tarea ingresada y done inicializado a false
             const nuevaTarea = { label: tarea, done: false };
     
-           /* // Actualizar el estado de todos usando setTodos con una función de callback
-            setTodos(prevTodos => {
-                // prevTodos es el estado anterior de todos(antes de actualizar la lista)
-                if (Array.isArray(prevTodos)) {
-                    // Si prevTodos es un arreglo
-                    return [...prevTodos, nuevaTarea]; // devolver un nuevo arreglo con todas las tareas anteriores más la nuevaTarea
-                } else {
-                    // Si prevTodos no es un arreglo (por ejemplo, null o undefined), devolver un arreglo con solo nuevaTarea
-                    return [nuevaTarea];
-                }
-            });
-    */
             // Sincronizar la lista de tareas con el servidor llamando a crearTareas
             crearTareas(nuevaTarea);
     
