@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Importa estilos globales de tu aplicación (CSS)
-import './styles/index.css';
+import '../styles/index.css';
 
 // Importa el componente Home que contiene tu aplicación React
 import Home from './component/home.jsx';
