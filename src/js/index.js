@@ -1,6 +1,6 @@
 // Importa React y ReactDOM
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 // Importa estilos globales de tu aplicación (CSS)
 import '../styles/index.css';
@@ -12,4 +12,5 @@ import Home from './component/home.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Renderiza tu aplicación React
-ReactDOM.createRoot(document.getElementById('app')).render(<Home />);
+const root = ReactDOM.createRoot(document.getElementById('app'));
+root.render(<Home />);
